@@ -1,15 +1,16 @@
-sudo: false
-dist: trusty
 language: node_js
 node_js:
-  - '6'
   - '8'
   - '10'
+  - '12'
+  - 'node'
 
 install:
   - npm install
 
 script:
-  # TODO: - npm run lint
+  - npm run lint
   - npm run test
-  - npm run coverage
+
+after_success: 
+- npm run coverage

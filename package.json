@@ -1,7 +1,7 @@
 {
-  "name": "@dashevo/dashd-rpc",
-  "description": "Dash Client Library to connect to Dash Core (dashd) via RPC",
-  "version": "2.0.1",
+  "name": "@trivechain/trivechaind-rpc",
+  "description": "Trivechain Client Library to connect to Trivechain Core (trivechaind) via RPC",
+  "version": "1.0.0",
   "author": {
     "name": "Stephen Pair",
     "email": "stephen@bitpay.com"
@@ -26,21 +26,30 @@
     {
       "name": "Alex Werner",
       "email": "alex.werner@dash.org"
+    },
+    {
+      "name": "Ji Sheng Tan",
+      "email": "jisheng@trivechain.com"
     }
   ],
   "keywords": [
-    "dash",
+    "trivechain",
     "rpc"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dashevo/dashd-rpc"
+    "url": "https://github.com/trivechain/trivechaind-rpc"
   },
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha test -R spec",
-    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --recursive"
+    "test": "nyc --reporter=html --reporter=text mocha -R spec",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint lib test --color",
+    "lint:fix": "eslint lib test --fix"
+  },  
+  "engines": {
+    "node": ">=8.0.0"
   },
   "dependencies": {
     "async": "^1.3.0",
@@ -48,15 +57,23 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^5.8.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^5.2.0",
-    "sinon": "^7.1.1"
+    "coveralls": "^3.0.11",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.0",
+    "onchange": "^6.1.0",
+    "prettier": "^2.0.2",
+    "sinon": "^9.0.2"
   },
   "bugs": {
-    "url": "https://github.com/dashevo/dashd-rpc/issues"
+    "url": "https://github.com/trivechain/trivechaind-rpc/issues"
   },
-  "homepage": "https://github.com/dashevo/dashd-rpc"
+  "homepage": "https://github.com/trivechain/trivechaind-rpc"
 }

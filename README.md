@@ -1,16 +1,21 @@
-# dashd-rpc
+# trivechaind-rpc
 
-[![Build Status](https://img.shields.io/travis/dashevo/dashd-rpc.svg?branch=master)](https://travis-ci.org/dashevo/dashd-rpc)
-[![NPM Package](https://img.shields.io/npm/v/@dashevo/dashd-rpc.svg)](https://www.npmjs.org/package/@dashevo/dashd-rpc)
+<a href="https://discord.gg/mZuXBxW"><img src="https://img.shields.io/discord/571241080373116928" alt="discord"></a>
+<a href="https://travis-ci.org/trivechain/trivechaind-rpc"><img src="https://img.shields.io/travis/trivechain/trivechaind-rpc/master.svg" alt="travis"></a>
+<a href='https://coveralls.io/github/trivechain/trivechaind-rpc?branch=master'><img src='https://coveralls.io/repos/github/trivechain/trivechaind-rpc/badge.svg?branch=master' alt='Coverage Status' /></a>
+<a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
+<a href='https://www.npmjs.com/package/@trivechain/trivechaind-rpc'><img alt="node" src="https://img.shields.io/node/v/@trivechain/trivechaind-rpc"></a>
+<a href='https://www.npmjs.com/package/@trivechain/trivechaind-rpc'><img alt="npm" src="https://img.shields.io/npm/dm/@trivechain/trivechaind-rpc"></a>
+<a href="https://github.com/trivechain/trivechaind-rpc"><img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/trivechain/trivechaind-rpc"></a>
 
-> Dash Client Library to connect to Dash Core (dashd) via RPC
+> Trivechain Client Library to connect to Trivechain Core (trivechaind) via RPC
 
 ## Install
 
-dashd-rpc runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
+trivechaind-rpc runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
 
 ```bash
-npm install @dashevo/dashd-rpc
+npm install @trivechain/trivechaind-rpc
 ```
 
 ## Usage
@@ -27,8 +32,8 @@ Config parameters :
 
 Promise vs callback based
 
-  - `require('@dashevo/dashd-rpc/promise')` to have promises returned
-  - `require('@dashevo/dashd-rpc')` to have callback functions returned
+  - `require('@trivechain/trivechaind-rpc/promise')` to have promises returned
+  - `require('@trivechain/trivechaind-rpc')` to have callback functions returned
 	
 ### Examples
 
@@ -37,8 +42,8 @@ Config:
 ```javascript
 var config = {
     protocol: 'http',
-    user: 'dash',
-    pass: 'local321',
+    user: 'user',
+    pass: 'pass',
     host: '127.0.0.1',
     port: 19998
 };
@@ -47,7 +52,7 @@ var config = {
 Promise based:
 
 ```javascript
-var RpcClient = require('@dashevo/dashd-rpc/promise');
+var RpcClient = require('@trivechain/trivechaind-rpc/promise');
 var rpc = new RpcClient(config);
 
 rpc.getRawMemPool()
@@ -68,8 +73,8 @@ Callback based (legacy):
 
 ```javascript
 var run = function() {
-  var bitcore = require('@dashevo/dashcore-lib');
-  var RpcClient = require('@dashevo/dashd-rpc');
+  var bitcore = require('@trivechain/trivechaincore-lib');
+  var RpcClient = require('@trivechain/trivechaind-rpc');
   var rpc = new RpcClient(config);
 
   var txids = [];
@@ -115,11 +120,11 @@ var run = function() {
 You can dynamically access to the help of each method by doing
 
 ```
-const RpcClient = require('@dashevo/dashd-rpc');
+const RpcClient = require('@trivechain/trivechaind-rpc');
 var client = new RPCclient({
     protocol:'http',
-    user: 'dash',
-    pass: 'local321', 
+    user: 'user',
+    pass: 'password', 
     host: '127.0.0.1', 
     port: 19998
 });
@@ -137,8 +142,8 @@ client.help('getinfo',cb);
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/dashevo/dash-std-template/issues/new) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/trivechain/trivechaind-rpc/issues/new) or submit PRs.
 
 ## License
 
-[MIT](LICENSE) &copy; Dash Core Group, Inc.
+[MIT](LICENSE) &copy; Trivechain Ltd.
