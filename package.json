@@ -1,7 +1,7 @@
 {
   "name": "@trivechain/trivechaind-rpc",
   "description": "Trivechain Client Library to connect to Trivechain Core (trivechaind) via RPC",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "author": {
     "name": "Stephen Pair",
     "email": "stephen@bitpay.com"
@@ -47,7 +47,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint lib test --color",
     "lint:fix": "eslint lib test --fix"
-  },  
+  },
   "engines": {
     "node": ">=8.0.0"
   },
